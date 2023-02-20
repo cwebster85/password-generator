@@ -28,3 +28,24 @@ function passwordGenerator() {
 passwordGenerator()
 
 
+let text = document.getElementById('password1').innerHTML;
+const copyContent = async () => {
+  try {
+    await navigator.clipboard.writeText(text);
+    console.log('Content copied to clipboard');
+  } catch (err) {
+    console.error('Failed to copy: ', err);
+  }
+  window.location.reload();
+}
+
+let text2 = document.getElementById('password2').innerHTML;
+const copyContent2 = async () => {
+  try {
+    await navigator.clipboard.writeText(text2);
+    console.log('Content copied to clipboard');
+  } catch (err) {
+    console.error('Failed to copy: ', err);
+  }
+  window.location.reload();
+}

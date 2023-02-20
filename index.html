@@ -12,9 +12,15 @@
             <h3>Never use an insecure password again</h3>
             <button onclick="passwordGenerator()">Generate passwords</button>
             <div id="divider"></div>
-            <div class="passwords">
-                <p id="password1"></p>
-                <p id="password2"></p>
+            <div id="spans">
+                <span id="span1">
+                    <p id="password1"></p>
+                    <button class="btn" onclick="copyContent()">Copy</button>
+                </span>
+                <span id="span2">
+                    <p id="password2"></p>
+                    <button class="btn" onclick="copyContent2()">Copy</button>
+                </span>
             </div>
         </div>
         <script src="index.js"></script>
