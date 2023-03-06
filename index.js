@@ -25,27 +25,29 @@ function passwordGenerator() {
     }
 }
 
+
 passwordGenerator()
 
-
-let text = document.getElementById('password1').innerHTML;
-const copyContent = async () => {
-  try {
-    await navigator.clipboard.writeText(text);
+function copyContent() {
+  let copyText = document.getElementById('password1').innerHTML;
+  // Select the text field
+  navigator.clipboard.writeText(copyText).then(() => {
     console.log('Content copied to clipboard');
-  } catch (err) {
-    console.error('Failed to copy: ', err);
-  }
-  window.location.reload();
+    /* Resolved - text copied to clipboard successfully */
+  },() => {
+    console.error('Failed to copy');
+    /* Rejected - text failed to copy to the clipboard */
+  });
 }
 
-let text2 = document.getElementById('password2').innerHTML;
-const copyContent2 = async () => {
-  try {
-    await navigator.clipboard.writeText(text2);
-    console.log('Content copied to clipboard');
-  } catch (err) {
-    console.error('Failed to copy: ', err);
+  function copyContent2() {
+    let copyText2 = document.getElementById('password2').innerHTML;
+    // Select the text field
+    navigator.clipboard.writeText(copyText2).then(() => {
+      console.log('Content copied to clipboard');
+      /* Resolved - text copied to clipboard successfully */
+    },() => {
+      console.error('Failed to copy');
+      /* Rejected - text failed to copy to the clipboard */
+    });
   }
-  window.location.reload();
-}
